@@ -91,7 +91,7 @@ h3 {
 
 #portfolio a {
   text-decoration: underline;
-  color: white;
+  color: rgb(57, 48, 48);
 }
 /* responsive web design */
 @media screen and (min-width: 120px) and (max-width: 1080px) {
