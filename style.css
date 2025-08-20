@@ -1,5 +1,5 @@
 body {
-  background: green;
+  background: rgb(104, 156, 104);
   color: rgb(57, 255, 20);
   padding: 10px;
   font-family: sans-serif;
@@ -47,8 +47,23 @@ main {
   display: flex;
   margin-top: 20px;
 }
-.sidebar{
-    margin-right: 25px;
-    padding: 10px;
+.sidebar {
+  margin-right: 25px;
+  padding: 10px;
 }
-
+.sidebar-img {
+  width: 200px;
+}
+.content {
+  flex: 1;
+  padding: 15px;
+}
+#interests {
+  border: 4px gold ridge;
+  padding: 8px;
+  margin-top: 20px;
+}
+h2,
+h3 {
+  margin: 0pc;
+}
