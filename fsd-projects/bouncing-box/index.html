@@ -72,11 +72,11 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-        var positionX = 2;
+        var positionX = 5;
         var points = 0;
         var speed = 10;
-        var positionY;
-        var speedY;
+        var positionY = 5;
+        var speedY = 10;
         var boardHeight = jquery(window).height();
         var randNum = Math.random(0) * 100;
         var colorStr = "rgb(50, 25, 250)";
@@ -89,7 +89,7 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
-          moveBoxTo(2);
+          moveBoxTo(200);
           moveBoxTo(positionX, positionY);
           positionX += 10;
           positionX = positionX + speed;
@@ -109,7 +109,7 @@
          * - increase the speed
          * - move the box to the left side of the screen.
          */
-        function handleBoxClick(positionX, positionY = 0) {
+        function handleBoxClick(positionX = 0) {
           changeBoxText(points);
           points++;
           speed = 3 * points + 10;
