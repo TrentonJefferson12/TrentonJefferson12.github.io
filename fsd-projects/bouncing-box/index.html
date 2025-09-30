@@ -8,7 +8,9 @@
       .box {
         width: 70px;
         height: 70px;
-        background-color: teal;
+        background-image: url(https://media.tenor.com/CQ2PFgp4ZHUAAAAM/cat-breakdancing.gif);
+        background-color: darkgreen;
+        background-position: center;
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -55,8 +57,9 @@
         box.on("click", handleBoxClick);
 
         // moves the Box to a new position on the screen along the X-Axis
-        function moveBoxTo(newPositionX) {
+        function moveBoxTo(newPositionX, newPositionY) {
           box.css("left", newPositionX);
+          box.css("top, newPositionY");
         }
 
         // changes the text displayed on the Box
@@ -72,6 +75,14 @@
         var positionX = 5;
         var points = 0;
         var speed = 10;
+        var positionY;
+        var speedY;
+        var boardHeight = jquery(window).height();
+        var randNum = Math.random(0) * 100;
+        var colorStr = "rgb(50, 25, 250)";
+        box.css("background-color", colorStr);
+        var randomNumberBetween0and10 = math.random() * 10;
+        var interval = setInterval(update, 50);
         /**
          * This Function will be called 20 times/second.
          * Each time it is called, it should move the Box to a new location.
@@ -79,7 +90,7 @@
          */
         function update() {
           moveBoxTo(450);
-          moveBoxTo(positionX);
+          moveBoxTo(positionX, positionY);
           positionX += 10;
           positionX = positionX + speed;
           if (positionX < boardWidth) {
@@ -88,7 +99,9 @@
             speed *= -1;
           }
         }
-
+        function endGame() {
+          clearInterval(interval);
+        }
         /**
          * This Function will be called each time the box is clicked.
          * Each time it is called, it should perform each of the following actions:
@@ -101,6 +114,7 @@
           points++;
           speed = 3 * points + 10;
         }
+        setInterval(update, 50);
       })();
     </script>
   </body>
