@@ -17,7 +17,7 @@ var init = function (window) {
 
     // TODO 1 : Declare and initialize our variables
     var circle;
-    var circles = [i];
+    var circles = [];
 
     // TODO 2 : Create a function that draws a circle
     function drawCircle() {
@@ -53,11 +53,13 @@ var init = function (window) {
       // TODO 5 : Call game.checkCirclePosition() on your circles
       //"Loop was created"
       // TODO 8 / TODO 9 : Iterate over the array
-    }
+    
     for (var i = 0; i < circles.length; i++) {
-      call(physikz.updatePosition(circles[i]));
-      call(game.checkCirclePosition(circles[i]));
+      physikz.updatePosition(circles[i]);
+      game.checkCirclePosition(circles[i]);
     }
+  }
+    
     /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
@@ -73,12 +75,9 @@ var init = function (window) {
       }
 
       // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-      circle.x = 10;
-      circle.y = 5;
-      canvas.width = 0;
-      canvas.height = 0;
+     
       // YOUR TODO 6 CODE ENDS HERE //////////////////////////
-    };
+    }
 
     /////////////////////////////////////////////////////////////
     // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
@@ -93,7 +92,7 @@ var init = function (window) {
     game.update = update;
 
     app.addUpdateable(window.opspark.game);
-  };
+  
 };
 
 // DO NOT REMOVE THIS CODE //////////////////////////////////////////////////////
@@ -103,4 +102,5 @@ if (
 ) {
   // here, export any references you need for tests //
   module.exports = init;
+}
 }
